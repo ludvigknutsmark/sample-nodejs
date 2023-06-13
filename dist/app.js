@@ -9,7 +9,13 @@ app.use(express_1.default.json());
 app.use(express_1.default.static('public'));
 const port = 8080;
 app.get('/', (req, res) => {
-    console.log("Request data:", req);
+    let headers = req.headers;
+    console.log("===Headers===");
+    for (var h in headers) {
+        console.log(h, headers[h]);
+    }
+    console.log("=============");
+    console.log("IP Address:", req.socket.remoteAddress);
     res.send("test leakage");
 });
 app.listen(port, '0.0.0.0', () => {
