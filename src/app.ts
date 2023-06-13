@@ -13,7 +13,9 @@ app.get('/', (req, res) => {
   }
   console.log("=============")
   console.log("IP Address:", req.socket.remoteAddress);
-  
+  console.log("=============")
+  console.log("Req origin:", req.origin);
+
   res.send("test leakage")
 })
 
